@@ -1,0 +1,16 @@
+<md-card id="login-form">
+  <form #user="ngForm">
+    <md-card-title align="center">Login</md-card-title>
+    <md-card-content>
+        <md-input placeholder="Username" name="username" [(ngModel)]="user.username"></md-input>
+        <md-input placeholder="Password" type="password" name="password" [(ngModel)]="user.password"></md-input>
+    </md-card-content>
+    <md-card-actions align="end">
+      <button md-raised-button color="primary"
+        (click)="login(user.value)">Login</button>
+    </md-card-actions>
+  </form>
+  <div class="error" *ngIf="errors">
+    <md-icon>error</md-icon> <span>{{errors}}</span>
+  </div>
+</md-card>

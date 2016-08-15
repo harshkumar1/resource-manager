@@ -17,16 +17,15 @@ public class ResourceManagerApplication {
 	}
 	
 	@Configuration
-	@EnableWebMvc
 	public class WebConfig extends WebMvcConfigurerAdapter {
 
 		@Override
 		public void addCorsMappings(CorsRegistry registry) {
 			registry.addMapping("/api/**")
-				.allowedOrigins("http://localhost:51700")
-				.allowedMethods("PUT", "DELETE", "GET")
-				.allowedHeaders("header1", "header2", "header3")
-				.exposedHeaders("header1", "header2")
+				.allowedOrigins("http://localhost:4200")
+				.allowedMethods("PUT", "POST", "DELETE", "GET")
+				//.allowedHeaders("header1", "header2", "header3")
+				//.exposedHeaders("header1", "header2")
 				.allowCredentials(false).maxAge(3600);
 		}
 	}

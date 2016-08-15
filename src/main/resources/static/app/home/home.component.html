@@ -1,0 +1,37 @@
+<md-sidenav-layout fullscreen>
+  <md-sidenav #sidenav mode="side" opened=true id="main-sidenav">
+    <div class="profile-info">
+      <img src="/assests/images/user.svg" alt="[user]">
+      <span><i>Welcome</i> {{user._username}} </span>
+    </div>
+
+    <md-list id="app-main-menu-list">
+      <md-list-item class="app-menu-list-item">
+        <i class="material-icons">computer</i>
+        <md-line><a routerLink="/machines">Machines</a></md-line>
+      </md-list-item>
+      <md-list-item class="app-menu-list-item">
+        <i class="material-icons">group</i>
+        <md-line><a routerLink="/users">Users</a></md-line>
+      </md-list-item>
+    </md-list>
+
+  </md-sidenav>
+
+  <md-toolbar color="primary" id="main-toolbar">
+    <div class="toolbar-group">
+      <button class='app-icon-button' (click)="sidenav.toggle()">
+        <i class="material-icons">menu</i>
+      </button>
+      <span class="app-brand">Resource Manager</span>
+    </div>
+    <div class="toolbar-group">
+      <button class="app-icon-button" (click)="logout()">
+        <i class="material-icons">exit_to_app</i>
+      </button>
+    </div>
+  </md-toolbar>
+
+  <router-outlet></router-outlet>
+
+</md-sidenav-layout>
