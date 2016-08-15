@@ -16,7 +16,6 @@ import edu.psu.sweng568.services.UserService;
 /**
  * Created by hshekhar on 15/8/16.
  */
-@CrossOrigin(origins = "http://localhost:4200")
 @Controller
 @RequestMapping(path = "api/{version}/authenticate")
 public class AuthController

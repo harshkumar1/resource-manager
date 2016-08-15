@@ -38,15 +38,15 @@ var AuthenticationService = (function () {
     };
     AuthenticationService.prototype.login = function (loginInfo) {
         var data = JSON.stringify(loginInfo);
-        console.log(data);
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
         var url = "http://localhost:8080/api/v1/authenticate";
-        this._http
-            .post(url, data, headers)
+        return this._http
+            .post(url, data, options)
             .toPromise()
             .then(function (res) {
             console.log(res.json());
-            res.json().data;
+            return res.json();
         })
             .catch(this.handleError);
     };

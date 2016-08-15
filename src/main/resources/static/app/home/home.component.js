@@ -10,13 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var authentication_service_1 = require('../services/authentication.service');
+var user_model_1 = require('../models/user.model');
 var HomeComponent = (function () {
     function HomeComponent(_authService) {
         this._authService = _authService;
+        this.user = new user_model_1.User();
     }
     HomeComponent.prototype.ngOnInit = function () {
         console.log("Entry: HomeComponent:ngOnInit()");
         this.user = JSON.parse(localStorage.getItem("user"));
+        console.log(this.user);
     };
     HomeComponent.prototype.logout = function () {
         this._authService.logout();

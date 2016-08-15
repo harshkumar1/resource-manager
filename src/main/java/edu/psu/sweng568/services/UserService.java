@@ -30,6 +30,11 @@ public class UserService
 
     public User findUserWithLoginCredential(LoginInfo loginInfo)
     {
-        return userRepository.findByUsernameAndPassword(loginInfo.getUsername(), loginInfo.getPassword());
+        User user = userRepository.findByUsernameAndPassword(loginInfo.getUsername(), loginInfo.getPassword());
+        if (user != null) {
+            System.out.println("User : " + user.getUsername());
+        }
+
+        return user;
     }
 }
