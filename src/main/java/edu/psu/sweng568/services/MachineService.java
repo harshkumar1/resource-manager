@@ -17,7 +17,7 @@ public class MachineService {
 		return machineRepository.findAll();
 	}
 
-	public Machine getMachineByName(Integer machineName)
+	public Machine getMachineByHostname(Integer machineName)
 	{
 		return machineRepository.findOne(machineName);
 	}
